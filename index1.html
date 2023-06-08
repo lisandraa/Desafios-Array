@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aplicação</title>
+</head>
+<body>
+
+<h2>JavaScript Objects</h2>
+<p id="demo"></p>
+
+<div>
+    Nome <input id="name" type="text"><br>
+    Sobrenome <input id="lastname" type="text"><br>
+    Idade<input id="age" type="number"><br>
+    <button onclick="enviar()">Enviar</button> <br>
+    <section id="res"></section>
+</div>
+<script>
+
+function enviar() {
+    let name = document.getElementById("name").value
+    let lastname = document.getElementById("lastname").value
+    let age = document.getElementById("age").value
+    let res = document.getElementById("res")
+
+const user = {
+    firstname: name,
+    lastName: lastname,
+    age: age,
+    fullName: function() {
+        return this.firstname + " " + this.lastName;
+    }
+}
+
+document.getElementById("res").innerHTML = "Seu nome completo é <strong>"+ user.fullName() + "</strong>, e sua idade é <strong> " + user.age 
+}
+</script>
+</body>
+</html>

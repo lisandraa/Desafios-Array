@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array reduce</title>
+</head>
+<body>
+    <p>Subtraindo todos os números do array, começando pela esquerda:</p>
+
+<p id="demo"></p>
+
+<script>
+const numbers = [175, 50, 25];
+document.getElementById("demo").innerHTML = numbers.reduce(myFunc);
+
+function myFunc(total, num) {
+  return total - num;
+}
+</script>
+</body>
+</html>
