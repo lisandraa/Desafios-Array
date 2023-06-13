@@ -8,13 +8,14 @@
 </head>
 <body>
 
-<h2>JavaScript Objects</h2>
+<h2>Catalogação de produtos</h2>
 <p id="demo"></p>
 
 <div>
-    Nome <input id="name" type="text"><br>
-    Sobrenome <input id="lastname" type="text"><br>
-    Idade<input id="age" type="number"><br>
+    ID <input id="name" type="text"><br>
+    Nome do produto <input id="name1" type="text"><br>
+    Preço de compra <input id="bought" type="number"><br>
+    Preço de venda<input id="sell" type="number"><br>
     <button onclick="enviar()">Enviar</button> <br>
     <section id="res"></section>
 </div>
@@ -22,20 +23,22 @@
 
 function enviar() {
     let name = document.getElementById("name").value
-    let lastname = document.getElementById("lastname").value
-    let age = document.getElementById("age").value
+    let name1 = document.getElementById("name1").value
+    let bought = document.getElementById("bought").value
+    let sell = document.getElementById("sell").value
     let res = document.getElementById("res")
 
-const user = {
-    firstname: name,
-    lastName: lastname,
-    age: age,
-    fullName: function() {
-        return this.firstname + " " + this.lastName;
+const product = {
+    ID: name,
+    bought: bought,
+    sell: sell,
+    name1: name1,
+    fullProduct: function() {
+        return this.ID + ", " + this.name1;
     }
 }
 
-document.getElementById("res").innerHTML = "Seu nome completo é <strong>"+ user.fullName() + "</strong>, e sua idade é <strong> " + user.age 
+document.getElementById("res").innerHTML = "O produto <strong>"+ product.fullProduct() + "</strong> foi comprado por <strong> " + product.bought + " </strong> reais,e será vendido por <strong> " + product.sell + "</strong> reais"
 }
 </script>
 </body>
